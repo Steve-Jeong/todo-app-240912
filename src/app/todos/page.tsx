@@ -21,32 +21,32 @@ const Todos = async () => {
       </div>
 
       <div className="max-w-sm">
-        {/* {{!todos}? */}
-        {todos.map((todo) => (
-          <div
-            key={todo.id}
-            className="flex justify-between border items-center"
-          >
-            <p className="py-2">{todo.title}</p>
-            <div className="flex gap-2">
-              <form action={updateTodo}>
-                <input type="hidden" name="id" value={todo.id}></input>
-                <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
-                  Update
-                </button>
-              </form>
-              <form action={deleteTodo}>
-                <input type="hidden" name="id" value={todo.id}></input>
-                <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
-                  Delete
-                </button>
-              </form>
+        {todos && todos.length > 0 ? (
+          todos.map((todo) => (
+            <div
+              key={todo.id}
+              className="flex justify-between border items-center"
+            >
+              <p className="py-2">{todo.title}</p>
+              <div className="flex gap-2">
+                <form action={updateTodo}>
+                  <input type="hidden" name="id" value={todo.id} />
+                  <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
+                    Update
+                  </button>
+                </form>
+                <form action={deleteTodo}>
+                  <input type="hidden" name="id" value={todo.id} />
+                  <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
+                    Delete
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
-        ))}
-        {/* :
-        ''
-        } */}
+          ))
+        ) : (
+          <p>No todos found.</p>
+        )}
       </div>
     </div>
   );
