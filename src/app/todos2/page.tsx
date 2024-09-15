@@ -55,18 +55,16 @@ const Todos = () => {
       </div>
       <div className="max-w-sm">
         {todos.map((todo) => (
-          <div
+          <div 
             key={todo.id}
-            className="flex justify-between border items-center"
-          >
-            <div className="flex gap-2 items-center">
-              <form action={updateTodo}>
+            className="flex justify-between border items-center gap-2">
+              <form action={updateTodo} className="flex justify-between w-full">
                 <input type="hidden" name="id" value={todo.id}></input>
                 <input
                   type="text"
                   name="title"
                   defaultValue={todo.title}
-                  className="border border-gray-300 p-1 mr-2"
+                  className="border border-gray-300 p-1 mr-2 w-full"
                 />
                 <button className="btn-custom">Update</button>
               </form>
@@ -74,7 +72,6 @@ const Todos = () => {
                 <input type="hidden" name="id" value={todo.id}></input>
                 <button className="btn-custom">Delete</button>
               </form>
-            </div>
           </div>
         ))}
       </div>
