@@ -19,6 +19,7 @@ export default function TodoForm({onAddTodo}:{onAddTodo:() => void}) {
         body: JSON.stringify({ title }),
       });
       if (response.ok) {
+        console.log("### response ok");
         form.reset();
         onAddTodo(); // Notify parent component to refresh the todo list
       } else {
@@ -30,14 +31,20 @@ export default function TodoForm({onAddTodo}:{onAddTodo:() => void}) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='mb-4'>
       <input
         type="text"
         name="title"
         placeholder="Enter a new todo"
         required
+        className="border border-gray-500 p-2 rounded mr-2"
       />
-      <button type="submit">Add Todo</button>
+      <button 
+        type="submit" 
+        className="btn-custom"
+      >
+        Add Todo
+      </button>
     </form>
   );
 }

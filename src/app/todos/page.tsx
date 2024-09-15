@@ -1,4 +1,5 @@
 import { createTodo, getTodos, updateTodo, deleteTodo } from "@/lib/todos";
+import "@/app/globals.css"
 
 const Todos = async () => {
   const todos = await getTodos();
@@ -12,9 +13,9 @@ const Todos = async () => {
             type="text"
             placeholder="Enter a todo"
             name="title"
-            className="border border-gray-500 p-2 rounded"
+            className="border border-gray-500 p-2 rounded mr-2"
           ></input>
-          <button className="border-b border-r border-gray-300 shadow-md px-2 rounded hover:shadow-lg hover:border">
+          <button className="btn-custom">
             Make a todo
           </button>
         </form>
@@ -31,13 +32,13 @@ const Todos = async () => {
               <div className="flex gap-2">
                 <form action={updateTodo}>
                   <input type="hidden" name="id" value={todo.id} />
-                  <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
+                  <button className="btn-custom">
                     Update
                   </button>
                 </form>
                 <form action={deleteTodo}>
                   <input type="hidden" name="id" value={todo.id} />
-                  <button className="border-b border-r border-gray-300 shadow-md px-2 hover:shadow-lg hover:border">
+                  <button className="btn-custom">
                     Delete
                   </button>
                 </form>

@@ -1,6 +1,5 @@
 "use client"
 import { createTodo } from '@/lib/todos'
-import React, {useState} from 'react'
 
 const CreateTodo = () => {
   return (

@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import {prisma} from '@/lib/prisma'
 
-type Todo = {
-  id: number,
-  title: string,
-  createdAt: Date,
-};
+// type Todo = {
+//   id: number,
+//   title: string,
+//   createdAt: Date,
+// };
 
 export async function GET() {
   const todos = await prisma.todos.findMany({
@@ -22,4 +22,22 @@ export async function POST(request: Request) {
     data: { title },
   });
   return NextResponse.json(todo);
+}
+
+export async function PUT(request: Request) {
+  const { id, title } = await request.json();
+  const updatedTodo = await prisma.todos.update({
+    where: { id },
+    data: { title },
+  });
+  return NextResponse.json(updatedTodo);
+}
+
+export async function DELETE(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = Number(searchParams.get('id'));
+  await prisma.todos.delete({
+    where: { id },
+  });
+  return NextResponse.json({ message: 'Todo deleted successfully' });
 }

@@ -3,11 +3,11 @@ import TodoForm from '@/components/TodoForm';
 import TodoList from '@/components/TodoList';
 import { useState } from 'react';
 
-type Todo = {
-    id: number,
-    content: string,
-    completed: boolean,
-  };
+// type Todo = {
+//     id: number,
+//     content: string,
+//     completed: boolean,
+//   };
 
 export default function Home() {
   const [refresh, setRefresh] = useState(0);
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1>Todo App</h1>
+      <h2 className="text-2xl font-bold">Todos</h2>
       <TodoForm onAddTodo={onTodoAdded} />
       <TodoList refresh={refresh} />
     </main>
