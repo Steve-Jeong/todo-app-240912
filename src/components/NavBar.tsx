@@ -12,6 +12,7 @@ const NavBar = () => {
     { href: "/todos2", name: "Todos with 'use client' and server action" },
     { href: "/todos3", name: "Todos with route handler - json" },
     { href: "/file", name: "Files upload with FormData" },
+    { href: "/form", name: "Form Data 처리방법" },
 
   ];
 
