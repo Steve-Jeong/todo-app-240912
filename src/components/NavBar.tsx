@@ -13,6 +13,7 @@ const NavBar = () => {
     { href: "/todos3", name: "Todos with route handler - json" },
     { href: "/file", name: "Files upload with FormData" },
     { href: "/form", name: "Form Data 처리방법" },
+    { href: "/controlled-form", name: "Controlled Form Data 처리방법" },
     { href: "/input", name: "multiple input" },
 
   ];
