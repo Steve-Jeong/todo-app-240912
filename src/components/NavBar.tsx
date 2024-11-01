@@ -6,6 +6,7 @@ import React from "react";
 const NavBar = () => {
   const navBar = [
     { href: "/", name: "Home" },
+    { href: "/varinput", name: "Various Form Input"},
     { href: "/todos", name: "Todos" },
     { href: "/users", name: "Users" },
     { href: "/image", name: "Image" },
@@ -15,6 +16,7 @@ const NavBar = () => {
     { href: "/form", name: "Form Data 처리방법" },
     { href: "/controlled-form", name: "Controlled Form Data 처리방법" },
     { href: "/input", name: "multiple input" },
+    { href: "/target", name: "currentTarget vs target" },
 
   ];
 
