@@ -75,9 +75,11 @@ export default function Home() {
         <input
           type="file"
           name="file"
+          aria-label="파일 업로드"
+          title="파일 업로드"
           onChange={handleChange}
         />
-        <button type="submit">제출</button>
+        <button type="submit" className="p-2 rounded-lg border border-blue-300">제출</button>
       </form>
       {message && <p>{message}</p>}
     </div>

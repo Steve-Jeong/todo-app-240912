@@ -18,8 +18,8 @@ const Target = () => {
     <div>
       Target
       <div id="mydiv">
-        <p>나는 나다</p>
-        <a href="#">우리나라</a>
+        <p className="border border-blue-300 w-32 hover:border-blue-600 hover:border-2">나는 나다</p>
+        <a href="#" className="border border-blue-300 w-32 hover:border-blue-600 hover:border-2">우리나라</a>
       </div>
     </div>
   );

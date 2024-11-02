@@ -13,6 +13,9 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const formDataObj = Object.fromEntries(formData);
     console.log('FormData:', formDataObj);
+    const {name, email} = formDataObj
+    console.log(`         name : ${name}, email : ${email}`)
+
     return NextResponse.json({ message: 'FormData received', data: formDataObj });
   }
 
