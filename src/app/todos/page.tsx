@@ -28,10 +28,16 @@ const Todos = async () => {
               key={todo.id}
               className="flex justify-between border items-center"
             >
-              <p className="py-2">{todo.title}</p>
+              {/* <p className="py-2">{todo.title}</p> */}
               <div className="flex gap-2">
-                <form action={updateTodo}>
+                <form action={updateTodo} className="flex justify-between w-full">
                   <input type="hidden" name="id" value={todo.id} />
+                  <input
+                    type="text"
+                    name="title"
+                    defaultValue={todo.title}
+                    className="border border-gray-300 p-1 mr-2 w-full"
+                  />
                   <button className="btn-custom">
                     Update
                   </button>
