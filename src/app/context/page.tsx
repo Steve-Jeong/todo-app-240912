@@ -3,14 +3,14 @@ import { createContext, useState, useMemo } from "react";
 import UserInput from "./UserInput";
 import UserShow from "./UserShow";
 
-type UserShow = {
+type UserType = {
   name: string;
   age: number | string;
 };
 
 type UserContextType = {
-  user: UserShow;
-  setUser: React.Dispatch<React.SetStateAction<UserShow>>;
+  user: UserType;
+  setUser: React.Dispatch<React.SetStateAction<UserType>>;
 };
 
 export const UserContext = createContext<UserContextType>({
@@ -19,7 +19,7 @@ export const UserContext = createContext<UserContextType>({
 });
 
 export default function Application() {
-  const [user, setUser] = useState<UserShow>({ name: "", age: "" });
+  const [user, setUser] = useState<UserType>({ name: "", age: "" });
   const value = useMemo(() => ({ user, setUser }), [user]);
   return (
     <UserContext.Provider value={value}>
