@@ -17,6 +17,7 @@ const NavBar = () => {
     { href: "/controlled-form", name: "Controlled Form Data 처리방법" },
     { href: "/input", name: "multiple input" },
     { href: "/target", name: "currentTarget vs target" },
+    { href: "/context", name: "create context" },
 
   ];
 

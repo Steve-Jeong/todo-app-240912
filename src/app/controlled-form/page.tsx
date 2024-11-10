@@ -26,6 +26,7 @@ export default function Home() {
     Object.entries(formDataInput).forEach(([key, value]) => {
       formData.append(key, value);
     });
+    //formDataInput from useState variable
     //1.  Object.entries(formDataInput).forEach(([key, value]) => {
     //   formData.append(key, value);
     // });
